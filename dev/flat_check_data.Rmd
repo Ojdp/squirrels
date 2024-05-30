@@ -1,0 +1,96 @@
+---
+title: "flat_check_data.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_check_data.Rmd", vignette_name = "Go further")
+
+
+fusen::inflate(
+  flat_file = "dev/flat_check_data.Rmd",
+  vignette_name = "Check data"
+)
+```
+
+```{r function - check_plus_in_primary_fur_color}
+#' Check the values of primary fur color
+#'
+#' @param primary_fur_color Character. A vector with the primary fur color.
+#' @return a vector of logicals
+#' @importFrom stringr str_detect
+#' @export
+check_plus_in_primary_fur_color <- function(primary_fur_color,) {
+  colors_are_ok <- !str_detect(string = primary_fur_color, pattern = "\\+")
+  return(colors_are_ok)
+}
+
+```
+
+```{r function - check_coordinates}
+#' Checks if the coordinates are in Central Park
+#'
+#' @param latitude numeric. A vector with the latitude.
+#' @param longitude numeric. A vector with the longitude.
+#' @return a vector of logicals
+#'
+#' @export
+check_coordinates <- function(latitude, longitude) {
+  if (isFALSE(is.numeric(latitude)) | isFALSE(is.numeric(longitude))) {
+    stop("latitude and longitude should be numeric")
+  }
+
+  coordinates_are_ok <-
+    latitude > 40.76400 & latitude < 40.80100 &
+      longitude > -73.98300 & longitude < -73.94735
+
+  return(coordinates_are_ok)
+} 
+```
+
+```{r examples-check_coordinates}
+my_fun()
+```
+# check_presence_of_required_columns
+    
+```{r function-check_presence_of_required_columns}
+#' Title
+#' 
+#' Description
+#' 
+#' @return un boléen TRUE 
+
+#' 
+#' @export
+check_presence_of_required_columns <- function(input_data){
+  if (isFALSE(colnames(input_data %in% c("long", "lat", "primary_fur_color")))) {
+    stop("Error : Colonnes manquantes")
+  }
+}
+```
+  
+```{r example-check_presence_of_required_columns}
+check_presence_of_required_columns("data_demo_squirrels")
+```
+  
+```{r tests-check_presence_of_required_columns}
+test_that("check_presence_of_required_columns works", {
+  expect_true(inherits(check_presence_of_required_columns, "function")) 
+})
+```
+  

@@ -1,0 +1,26 @@
+flat_check_data.Rmd:
+  path: dev/flat_check_data.Rmd
+  state: active
+  R: R/check_data.R
+  tests: tests/testthat/test-check_data.R
+  vignettes: vignettes/check-data.Rmd
+  inflate:
+    flat_file: dev/flat_check_data.Rmd
+    vignette_name: Check data
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask
+flat_get_info.Rmd:
+  path: dev/flat_get_info.Rmd
+  state: active
+  R: R/get_df_nrows.R
+  tests: tests/testthat/test-get_df_nrows.R
+  vignettes: vignettes/get-info-about-the-dataset.Rmd
+  inflate:
+    flat_file: dev/flat_get_info.Rmd
+    vignette_name: Get info about the dataset
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask

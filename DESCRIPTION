@@ -1,0 +1,24 @@
+Package: squirrels
+Title: Un Package Qui Sert A Compter Le Nombre De Lignes
+Version: 0.0.0.9000
+Authors@R: 
+    person("Ombeline", "JDP", , "ombeline.julliendepommerol@sciencespo.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0000-0000-0000"))
+Description: Le package sert à compter le nombre de lignes de mon
+    dataframe.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+Imports: 
+    glue
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: 
+    knitr
+Config/fusen/version: 0.5.2
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
