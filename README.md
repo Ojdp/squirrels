@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of squirrels is to compare the size of the squirrels and to
-check if they belong to NY throught coordinates and colors
+check if they belong to NY throught coordinates and colors !!
 
 ## Installation
 
