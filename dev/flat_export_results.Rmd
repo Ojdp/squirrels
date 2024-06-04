@@ -1,0 +1,59 @@
+---
+title: "flat_export_results.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# export_results
+
+```{r function-export_results}
+#' export_results Title
+#'
+#' @return 1
+#' @export
+#'
+#' @examples
+save_as_csv <- function(data, filepath) ) {
+  if(isFALSE(inherits(data, "dataframe")))
+    stop("Param 'data' must be a dataframe")
+  }
+if(isFALSE(nrow(data)))
+    stop("Param 'data' must be a dataframe")
+ 
+
+  write.csv2{utils}
+
+  return(csv)
+}
+```
+mon_dossier_temp <- tempfile(pattern = "savecsv")
+dir.create(mon_dossier_temp)
+
+# ok : le fichier .csv est enregistré dans le projet actuel
+iris |> save_as_csv(file.path(mon_dossier_temp, "output.csv"))
+```{r examples-export_results}
+export_results()
+```
+
+```{r tests-export_results}
+test_that("export_results works", {
+
+})
+```
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_export_results.Rmd", vignette_name = "Exporter les résultats")
+```
